@@ -26,12 +26,12 @@ const ScamAlert = () => {
           unsolicited employment inquiries.
         </p>
         <p className="text-gray-600 text-base md:text-lg mb-4">
-          There are no fees for applying to Axion for employment. If you have
-          paid a fee or have completed work under a fake contract and have not
-          been paid, you can report the crime to the proper authorities.
+          Please note that there is a $25 application fee when applying to Axion
+          for employment.This fee helps us verify each application and ensures
+          that we’re engaging with genuinely interested and serious candidates.
         </p>
         <button className=" text-orange-400 border border-orange-400 font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors">
-          APPLY NOW
+          <a href="/apply-now">APPLY NOW</a>
         </button>
       </div>
     </section>

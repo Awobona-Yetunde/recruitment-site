@@ -1,53 +1,65 @@
-import React from "react";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState } from "react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDataServicesOpen, setIsDataServicesOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (dropdown) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
 
   return (
-    <header className="sticky top-0 right-0 bg-black z-10">
-      <div className="flex justify-between items-center p-4 text-white">
-        <div className="flex gap-2 items-center">
-          <h1 className="text-2xl font-bold text-orange-500">AXION</h1>
-          <h1 className="text-lg font-medium text-gray-400">DATA SERVICES</h1>
-        </div>
-        <div className="flex items-center gap-8">
-          <a
-            href="tel:800-493-2630"
-            className="text-orange-500 text-xl font-semibold"
-          >
-            800-493-2630
+    <header className="sticky top-0 bg-black shadow-md z-10">
+      <div className="flex justify-between items-center py-2 px-4">
+        <a
+          href="tel:800-493-2630"
+          className="text-orange-500 text-sm font-semibold hover:text-orange-300 transition-colors"
+        >
+          Call Us: 800-493-2630
+        </a>
+      </div>
+      <div className="flex justify-between items-center py-3 px-4 text-white">
+        <div className="flex gap-3 items-center">
+          <a href="/Landing-page">
+            <img
+              className="w-[60px] h-[60px] rounded-md"
+              src="/images/logo.png"
+              alt="Axion Logo"
+            />
           </a>
+          <h1 className="text-base font-bold tracking-tight text-gray-400">
+            DATA SERVICES
+          </h1>
+        </div>
+        <div className="flex items-center gap-4">
           <div className="md:hidden">
             <button
-              className="relative text-white"
+              className="text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <X className="transition-transform duration-300 h-8 w-8" />
+                <X className="h-6 w-6 transition-transform duration-300" />
               ) : (
-                <Menu className="h-8 w-8" />
+                <Menu className="h-6 w-6" />
               )}
             </button>
             {isMenuOpen && (
-              <div className="absolute top-full right-0 rounded-lg p-3 flex flex-col gap-4 px-6 bg-black border border-gray-700 shadow-xl text-white w-[200px]">
+              <div className="absolute top-full right-0 mt-2 w-full bg-white/95 backdrop-blur-sm border border-orange-400 rounded-lg shadow-lg p-4 flex flex-col gap-3 text-black">
                 <div>
                   <button
-                    onClick={() => {
-                      setIsDataServicesOpen(!isDataServicesOpen);
-                      setIsAboutOpen(false);
-                      setIsContactOpen(false);
-                    }}
-                    className="w-full text-left hover:text-orange-500"
+                    onClick={() => toggleDropdown("dataServices")}
+                    className="w-full text-left font-semibold hover:text-orange-500 flex items-center justify-between"
                   >
                     Data Services
+                    {activeDropdown === "dataServices" ? (
+                      <ChevronUp className="h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
                   </button>
-                  {isDataServicesOpen && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2">
+                  {activeDropdown === "dataServices" && (
+                    <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
                       <a
                         href="/DataEntryServices"
                         className="hover:text-orange-500"
@@ -55,80 +67,103 @@ const Header = () => {
                         Data Entry Services
                       </a>
                       <a
-                        href="/data_verification-page"
+                        href="/data-verification-page"
                         className="hover:text-orange-500"
                       >
                         Data Entry Verification
                       </a>
-                      <a href="#" className="hover:text-orange-500">
-                        Ai Processing and Verification
+                      <a
+                        href="/ai-processing"
+                        className="hover:text-orange-500"
+                      >
+                        AI Processing and Verification
                       </a>
-                      <a href="#" className="hover:text-orange-500">
+                      <a
+                        href="/data-research"
+                        className="hover:text-orange-500"
+                      >
                         Web Research Services
                       </a>
-                      <a href="#" className="hover:text-orange-500">
-                        1-9 Support Services
-                      </a>
-                      <a href="#" className="hover:text-orange-500">
+                      <a
+                        href="/us-based-page"
+                        className="hover:text-orange-500"
+                      >
                         US Based Data Entry
                       </a>
-                      <a href="#" className="hover:text-orange-500">
+                      <a
+                        href="/customize-page"
+                        className="hover:text-orange-500"
+                      >
                         Customized Service Approach
                       </a>
-                      <a href="#" className="hover:text-orange-500">
+                      <a
+                        href="/data-entry-staffing"
+                        className="hover:text-orange-500"
+                      >
                         Data Entry Staffing & Management
                       </a>
                     </div>
                   )}
                 </div>
-                <a href="#" className="hover:text-orange-500">
+                <a
+                  href="/client-projects"
+                  className="font-semibold hover:text-orange-500"
+                >
                   Sample Client Projects
+                </a>
+                <a
+                  href="/data-security-page"
+                  className="font-semibold hover:text-orange-500"
+                >
+                  Data Security
                 </a>
                 <div>
                   <button
-                    onClick={() => {
-                      setIsAboutOpen(!isAboutOpen);
-                      setIsDataServicesOpen(false);
-                      setIsContactOpen(false);
-                    }}
-                    className="w-full text-left hover:text-orange-500"
+                    onClick={() => toggleDropdown("about")}
+                    className="w-full text-left font-semibold hover:text-orange-500 flex items-center justify-between"
                   >
                     About
+                    {activeDropdown === "about" ? (
+                      <ChevronUp className="h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
                   </button>
-                  {isAboutOpen && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2">
-                      <a href="#" className="hover:text-orange-500">
+                  {activeDropdown === "about" && (
+                    <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
+                      <a href="/about-axion" className="hover:text-orange-500">
                         About Axion
                       </a>
-                      <a href="#" className="hover:text-orange-500">
+                      <a href="/fees" className="hover:text-orange-500">
                         Fees
                       </a>
-                      <a href="#" className="hover:text-orange-500">
-                        Faqs
-                      </a>
-                      <a href="#" className="hover:text-orange-500">
-                        Review Us
+                      <a href="/faqs" className="hover:text-orange-500">
+                        FAQs
                       </a>
                     </div>
                   )}
                 </div>
                 <div>
                   <button
-                    onClick={() => {
-                      setIsContactOpen(!isContactOpen);
-                      setIsDataServicesOpen(false);
-                      setIsAboutOpen(false);
-                    }}
-                    className="w-full text-left hover:text-orange-500"
+                    onClick={() => toggleDropdown("contact")}
+                    className="w-full text-left font-semibold hover:text-orange-500 flex items-center justify-between"
                   >
                     Contact
+                    {activeDropdown === "contact" ? (
+                      <ChevronUp className="h-4 w-4" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
                   </button>
-                  {isContactOpen && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2">
-                      <a href="#" className="hover:text-orange-500">
+                  {activeDropdown === "contact" && (
+                    <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
+                      <a href="/contact" className="hover:text-orange-500">
                         Contact
                       </a>
-                      <a href="#" className="hover:text-orange-500">
+                      <a
+                        href="/employment-page"
+                        className="hover:text-orange-500"
+                      >
                         Employment
                       </a>
                     </div>
@@ -137,124 +172,136 @@ const Header = () => {
               </div>
             )}
           </div>
-          <nav className="hidden md:flex gap-6 items-center">
+          <nav className="hidden md:flex items-center gap-4 text-xs">
             <div className="relative">
               <button
-                onClick={() => setIsDataServicesOpen(!isDataServicesOpen)}
-                className="hover:text-orange-500"
+                onClick={() => toggleDropdown("dataServices")}
+                className="hover:text-orange-500 flex items-center gap-1 whitespace-nowrap"
               >
                 Data Services
+                {activeDropdown === "dataServices" ? (
+                  <ChevronUp className="h-4 w-4" />
+                ) : (
+                  <ChevronDown className="h-4 w-4" />
+                )}
               </button>
-              {isDataServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-black border border-gray-700 rounded-lg shadow-xl text-white p-2">
+              {activeDropdown === "dataServices" && (
+                <div className="absolute top-full left-0 mt-2 w-[250px] bg-white border border-orange-400 rounded-lg shadow-lg p-2 text-black text-xs">
                   <a
                     href="/DataEntryServices"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Data Entry Services
                   </a>
                   <a
                     href="/data-verification-page"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Data Entry Verification
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/ai-processing"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
-                    Ai Processing and Verification
+                    AI Processing and Verification
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/data-research"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Web Research Services
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
-                  >
-                    1-9 Support Services
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/us-based-page"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     US Based Data Entry
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/customize-page"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Customized Service Approach
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/data-entry-staffing"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Data Entry Staffing & Management
                   </a>
                 </div>
               )}
             </div>
-            <a href="#" className="hover:text-orange-500">
+            <a
+              href="/client-projects"
+              className="hover:text-orange-500 whitespace-nowrap"
+            >
               Sample Client Projects
+            </a>
+            <a
+              href="/data-security-page"
+              className="hover:text-orange-500 whitespace-nowrap"
+            >
+              Data Security
             </a>
             <div className="relative">
               <button
-                onClick={() => setIsAboutOpen(!isAboutOpen)}
-                className="hover:text-orange-500"
+                onClick={() => toggleDropdown("about")}
+                className="hover:text-orange-500 flex items-center gap-1 whitespace-nowrap"
               >
                 About
+                {activeDropdown === "about" ? (
+                  <ChevronUp className="h-4 w-4" />
+                ) : (
+                  <ChevronDown className="h-4 w-4" />
+                )}
               </button>
-              {isAboutOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-black border border-gray-700 rounded-lg shadow-xl text-white p-2">
+              {activeDropdown === "about" && (
+                <div className="absolute top-full right-0 mt-2 w-[180px] bg-white border border-orange-400 rounded-lg shadow-lg p-2 text-black text-xs">
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/about-axion"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     About Axion
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/fees"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Fees
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/faqs"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
-                    Faqs
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
-                  >
-                    Review Us
+                    FAQs
                   </a>
                 </div>
               )}
             </div>
             <div className="relative">
               <button
-                onClick={() => setIsContactOpen(!isContactOpen)}
-                className="hover:text-orange-500"
+                onClick={() => toggleDropdown("contact")}
+                className="hover:text-orange-500 flex items-center gap-1 whitespace-nowrap"
               >
                 Contact
+                {activeDropdown === "contact" ? (
+                  <ChevronUp className="h-4 w-4" />
+                ) : (
+                  <ChevronDown className="h-4 w-4" />
+                )}
               </button>
-              {isContactOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-black border border-gray-700 rounded-lg shadow-xl text-white p-2">
+              {activeDropdown === "contact" && (
+                <div className="absolute top-full right-0 mt-2 w-[180px] bg-white border border-orange-400 rounded-lg shadow-lg p-2 text-black text-xs">
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/contact"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Contact
                   </a>
                   <a
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-700 rounded"
+                    href="/employment-page"
+                    className="block px-3 py-1 hover:bg-orange-200 rounded whitespace-nowrap"
                   >
                     Employment
                   </a>
@@ -269,50 +316,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// import React from 'react';
-// import { useState } from 'react';
-// import { Menu, X } from 'lucide-react';
-
-// const Header = () => {
-//   const[isMenuOpen, setIsMenuOpen] = useState(false);
-//   return (
-//     <header className="sticky top-0 right-0 bg-white z-10">
-//       <div className="flex justify-between items-center p-4">
-//         <div className="flex gap-3 text-blue-800">
-//           <h1>DETA</h1>
-//           <h1 className="font-bold tracking-tight">DATA SERVICES</h1>
-//         </div>
-//         <div className="md:hidden">
-//           <button
-//             className="relative"
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//           >
-//             {isMenuOpen ? (
-//               <X className="transition-transform duration-300 h-8 w-8" />
-//             ) : (
-//               <Menu className="h-8 w-8 md:hidden" />
-//             )}
-//           </button>
-//           {isMenuOpen && (
-//             <div className='absolute top-full right-0 rounded-lg p-3 flex flex-col gap-6 px-8 group-focus:scale-y-100 origin-top w-[100%] h-[300px] bg-white border shadow-xl text-blue-500'>
-//               <a>Data Services</a>
-//               <a>Data Security</a>
-//               <a>About</a>
-//               <a>Contact</a>
-//             </div>
-//           )}
-//         </div>
-
-//         <nav className="hidden md:flex gap-3">
-//           <a>Data Services</a>
-//           <a>Data Security</a>
-//           <a>About</a>
-//           <a>Contact</a>
-//         </nav>
-//       </div>
-//     </header>
-//   );
-// }
-
-// export default Header;

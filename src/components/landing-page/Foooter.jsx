@@ -28,25 +28,24 @@ const Foooter = () => {
               INDUSTRY SOLUTIONS
             </h3>
             <div className="flex flex-col gap-3 ">
-              <a>Healthcare</a>
-              <a>Finance</a>
-              <a>Retail</a>
-              <a>Government</a>
-              <a>Not-For-Profit</a>
-              <a>Sports</a>
-              <a>Social Media</a>
+              <a href='/healthcare'>Healthcare</a>
+              <a href='/finance'>Finance</a>
+              <a href='/retail'>Retail</a>
+              <a href='/government'>Government</a>
+              <a href='/not-for-profit'>Not-For-Profit</a>
+              <a href='/sport'>Sports</a>
+              <a href='/social-media'>Social Media</a>
             </div>
           </div>
           <div>
             <h3 className="font-bold text-orange-500 mb-3">ABOUT</h3>
             <div className="flex flex-col gap-3 ">
-              <a href='fees'>Data Entry Cost Factors At Axion</a>
-              <a href='contact'>Contact</a>
-              <a>Employment</a>
-              <a>Faqs</a>
-              <a>Blog</a>
-              <a>Privacy Policy</a>
-              <a>Terms and conditions</a>
+              <a href='/fees'>Data Entry Cost Factors At Axion</a>
+              <a href='/contact'>Contact</a>
+              <a href='/employment-page'>Employment</a>
+              <a href='/faqs'>Faqs</a>
+              <a href='/privacy-policy'>Privacy Policy</a>
+              <a href='terms-condition'>Terms and conditions</a>
             </div>
           </div>
         </div>

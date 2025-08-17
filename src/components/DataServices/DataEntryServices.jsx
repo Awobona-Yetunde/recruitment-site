@@ -23,10 +23,10 @@ const DataEntryServices = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h3 className="text-2xl font-semibold text-orange-400 mb-4">
                     TRADITIONAL DATA ENTRY SERVICES
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-black mb-4">
                     We have been in business since 1996 using the the methods of
                     that time. We have long since expanded our offerings. Many
                     companies send us source data that we digitize using our own
@@ -36,7 +36,7 @@ const DataEntryServices = () => {
                     key-from-image interface that we customize for each data
                     entry project.
                   </p>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-black mb-4">
                     This more traditional approach offers greater control over
                     data quality and consistency through automated tools and
                     programmed procedures, such as address validation and
@@ -45,20 +45,20 @@ const DataEntryServices = () => {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                <h2 className="text-2xl font-semibold text-orange-400 mb-4">
                   Data Entry Staffing & Management
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-black mb-4">
                   Many contemporary clients prefer that we perform data entry,
                   data verification, or Internet research tasks by connecting to
                   their networks rather than sending us copies. Find out more
                   about our data entry staffing management services.
                 </p>
-                <p className="text-gray-600 mb-4">
+                <p className="text-black mb-4">
                   There are significant advantages to your company when
                   utilizing this approach:
                 </p>
-                <ul className="list-disc pl-5 text-gray-600 mb-4 space-y-2">
+                <ul className="list-disc pl-5 text-black mb-4 space-y-2">
                   <li>
                     You retain control over the physical documents, scanned
                     images, or keyed data which provides you with greater data
@@ -90,7 +90,7 @@ const DataEntryServices = () => {
                   </li>
                 </ul>
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h2 className="text-2xl font-semibold text-orange-400 mb-4">
                     Data Entry Verification
                   </h2>
                   <p className="text-gray-600 mb-4">
@@ -104,7 +104,7 @@ const DataEntryServices = () => {
                   </p>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h2 className="text-2xl font-semibold text-orange-400 mb-4">
                     Data Entry Service Areas
                   </h2>
                   <p className="text-gray-600 mb-4">
@@ -114,7 +114,7 @@ const DataEntryServices = () => {
                   </p>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                  <h2 className="text-2xl font-semibold text-orange-400 mb-4">
                     Industries We Offer Data Entry Services
                   </h2>
                   <p className="text-gray-600 mb-4">

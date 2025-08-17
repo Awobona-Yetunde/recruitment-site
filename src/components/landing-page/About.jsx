@@ -29,7 +29,7 @@ const About = () => {
             <div className="flex justify-between">
               <img className="h-15 w-16" src="/images/veteran.png"></img>
               <button className=" text-orange-400 border border-orange-400 font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors">
-                ABOUT AXION
+                <a href="/about-axion">ABOUT AXION</a>
               </button>
             </div>
           </div>

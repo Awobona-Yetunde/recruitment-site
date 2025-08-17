@@ -44,7 +44,7 @@ const DataProcess = () => {
               business succeed.
             </p>
             <button className=" text-orange-400 border border-orange-400 font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors">
-              DATA ENTRY SERVICES
+              <a href='/DataEntryServices'>DATA ENTRY SERVICES</a>
             </button>
           </div>
         </div>

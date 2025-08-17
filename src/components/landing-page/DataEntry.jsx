@@ -41,7 +41,7 @@ const DataEntry = () => {
               equipment, health care costs, and more.
             </p>
             <button className=" text-orange-400 border border-orange-400 font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors">
-              DATA ENTRY STAFFING
+              <a href='data-entry-staffing'>DATA ENTRY STAFFING</a>
             </button>
           </div>
         </div>

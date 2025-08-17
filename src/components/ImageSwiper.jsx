@@ -31,7 +31,7 @@ const ImageSwiper = () => {
       <hr className="border-t-2 mx-auto w-[250px] border-gray-900 mb-8 "></hr>
       <Swiper
         modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
         spaceBetween={30}
         slidesPerView={4}
         navigation

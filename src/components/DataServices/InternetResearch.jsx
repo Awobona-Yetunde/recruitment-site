@@ -8,7 +8,7 @@ const InternetResearch = () => {
           <div className="flex flex-col gap-8 ">
             <div className="mb-4">
               <img
-                src="/images/customized.jpg"
+                src="/images/dataresearch.jpg"
                 alt="Data Entry Services"
                 className="w-full lg:w-1/2 rounded-lg shadow-md"
               />
