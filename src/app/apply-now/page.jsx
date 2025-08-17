@@ -43,7 +43,7 @@ const Page = () => {
     });
 
     try {
-      const response = await fetch("http://localhost:5328/api/submit", {
+      const response = await fetch("https://axiondatarecruitment.com/api/submit", {
         method: "POST",
         body: data,
       });

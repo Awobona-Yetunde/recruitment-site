@@ -23,13 +23,16 @@ const EnquiryForm = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:5328/api/enquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://axiondatarecruitment.com/api/enquiry",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       console.log(formData)
       if (response.ok) {
         alert("Enquiry submitted successfully!");
