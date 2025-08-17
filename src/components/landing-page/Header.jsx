@@ -11,14 +11,14 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 bg-black shadow-md z-10">
-      <div className="flex justify-between items-center py-2 px-4">
+      {/* <div className="flex justify-between items-center py-2 px-4">
         <a
           href="tel:800-493-2630"
           className="text-orange-500 text-sm font-semibold hover:text-orange-300 transition-colors"
         >
           Call Us: 800-493-2630
         </a>
-      </div>
+      </div> */}
       <div className="flex justify-between items-center py-3 px-4 text-white">
         <div className="flex gap-3 items-center">
           <a href="/Landing-page">

@@ -51,7 +51,6 @@ const EnquiryForm = () => {
       }
     } catch (error) {
       alert("Error submitting enquiry. Please try again.");
-      console.error("Submission error:", error);
     }
   };
 
@@ -65,31 +64,24 @@ const EnquiryForm = () => {
               Get Started
             </h2>
             <p className="text-lg mb-4 leading-relaxed">
-              Have pre-sales questions about our data entry services, data
-              verification, Internet research, or data entry staffing &
-              management services? Simply give us a call at{" "}
-              <a
-                href="tel:8004932630"
-                className="text-orange-300 hover:underline"
-              >
-                800-493-2630
-              </a>{" "}
-              or fill out our form!
+              Have pre-sales questions about our data entry services,data
+              verification,internet research,or data entry staffing & management
+              services? Simply fill out our form!
             </p>
             <p className="text-lg mb-4 leading-relaxed">
               We are proud to serve businesses throughout the entire United
               States.
             </p>
-            <p className="text-lg leading-relaxed">
-              We are not currently hiring. Visit our{" "}
+            <div className="text-lg leading-relaxed flex gap-2">
+              <p>We are currently hiring. Visit our</p>
               <a
                 href="/employment-page"
                 className="text-orange-300 hover:underline"
               >
                 employment page
-              </a>{" "}
-              to apply when we are looking for operators.
-            </p>
+              </a>
+              <p>to apply.</p>
+            </div>
           </div>
           {/* Form Section */}
           <div className="lg:w-1/2 relative">

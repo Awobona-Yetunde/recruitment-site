@@ -9,6 +9,7 @@ import Reviews from '../Reviews';
 import DataEntry from '../DataEntry';
 import EnquiryForm from '../EnquiryForm';
 import Foooter from '../Foooter';
+import ReviewSlider from '../ReviewSlider';
 
 const LandingPage = () => {
   return (
@@ -21,6 +22,7 @@ const LandingPage = () => {
       <DataProcess/>
       <Reviews/>
       <DataEntry/>
+      <ReviewSlider/>
       <EnquiryForm/>
       <Foooter/>
 

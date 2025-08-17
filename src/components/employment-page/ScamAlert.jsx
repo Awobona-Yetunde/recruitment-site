@@ -22,7 +22,7 @@ const ScamAlert = () => {
           “Apply Now” links below and filling out the online application. We do
           NOT contact people who have not applied through this website, and if
           you are contacted, it will be by one of our staff having an email
-          address something like someone@Axiondata.com. We do not reply to
+          address something like someone@Axiondatarecruitment.com. We do not reply to
           unsolicited employment inquiries.
         </p>
         <p className="text-gray-600 text-base md:text-lg mb-4">

@@ -5,8 +5,8 @@ const Foooter = () => {
     <footer className="bg-white py-12">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col justify-center items-center gap-4 mb-7">
-          <div className="flex gap-3  text-blue-800">
-            <h1>DETA</h1>
+          <div className="flex gap-3  text-black">
+            <h1 className='font-bold '>AXION</h1>
             <h1 className="text-gray-600 text-base">DATA SERVICES</h1>
           </div>
           <p className="font-semibold">PITTSBURGH, PA</p>
