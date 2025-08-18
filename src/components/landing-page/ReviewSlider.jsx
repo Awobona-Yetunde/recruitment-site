@@ -66,11 +66,13 @@ const ReviewSlider = () => {
 
   return (
     <div className="relative w-full max-w-3xl mx-auto py-12">
-      <div className="overflow-hidden">
+      <div>
         <h2 className="text-3xl font-bold text-center text-black mb-8">
           What Clients Say
         </h2>
         <hr className="border-t-2 mx-auto w-[250px] border-gray-900 mb-8 "></hr>
+      </div>
+      <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentReview * 100}%)` }}
@@ -83,7 +85,9 @@ const ReviewSlider = () => {
               <cite className="text-orange-400 font-semibold">
                 {review.author}
               </cite>
-              <time className="text-orange-500 block text-sm">{review.date}</time>
+              <time className="text-orange-500 block text-sm">
+                {review.date}
+              </time>
             </div>
           ))}
         </div>
