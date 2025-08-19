@@ -1,5 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const ReviewSlider = () => {
   const reviews = [
@@ -47,74 +51,51 @@ const ReviewSlider = () => {
     },
   ];
 
-  const [currentReview, setCurrentReview] = useState(0);
-
-  const nextReview = () => {
-    setCurrentReview((prev) => (prev + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextReview();
-    }, 5000); // Auto-slide every 5 seconds
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="relative w-full max-w-3xl mx-auto py-12">
       <div>
         <h2 className="text-3xl font-bold text-center text-black mb-8">
           What Clients Say
         </h2>
-        <hr className="border-t-2 mx-auto w-[250px] border-gray-900 mb-8 "></hr>
+        <hr className="border-t-2 mx-auto w-[250px] border-gray-900 mb-8" />
       </div>
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentReview * 100}%)` }}
-        >
-          {reviews.map((review, index) => (
-            <div key={index} className="w-full flex-shrink-0 p-4">
-              <blockquote className="text-lg italic text-gray-700 mb-4">
-                &ldquo;{review.quote}&rdquo;
-              </blockquote>
-              <cite className="text-orange-400 font-semibold">
-                {review.author}
-              </cite>
-              <time className="text-orange-500 block text-sm">
-                {review.date}
-              </time>
-            </div>
-          ))}
-        </div>
-      </div>
-      <button
-        onClick={prevReview}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
+        pagination={{
+          el: ".swiper-pagination",
+          clickable: true,
+          bulletClass:
+            "swiper-pagination-bullet w-3 h-3 rounded-full bg-gray-300 mx-1",
+          bulletActiveClass: "bg-blue-500",
+        }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        className="w-full"
       >
+        {reviews.map((review, index) => (
+          <SwiperSlide key={index} className="p-4">
+            <blockquote className="text-lg italic text-gray-700 mb-4">
+              &ldquo;{review.quote}&rdquo;
+            </blockquote>
+            <cite className="text-orange-400 font-semibold">
+              {review.author}
+            </cite>
+            <time className="text-orange-500 block text-sm">{review.date}</time>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <button className="swiper-button-prev absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
         &lt;
       </button>
-      <button
-        onClick={nextReview}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
-      >
+      <button className="swiper-button-next absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
         &gt;
       </button>
-      <div className="flex justify-center mt-4 space-x-2">
-        {reviews.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentReview(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentReview === index ? "bg-blue-500" : "bg-gray-300"
-            }`}
-          ></button>
-        ))}
-      </div>
+      <div className="swiper-pagination flex justify-center mt-4 space-x-2" />
     </div>
   );
 };

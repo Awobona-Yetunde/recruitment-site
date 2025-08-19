@@ -32,10 +32,22 @@ const ImageSwiper = () => {
       <Swiper
         modules={[Navigation, Autoplay]}
         autoplay={{ delay: 1000, disableOnInteraction: false }}
-        spaceBetween={30}
-        slidesPerView={4}
         navigation
         loop={true}
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        }}
         className="max-w-5xl mx-auto"
       >
         {images.map((image) => (

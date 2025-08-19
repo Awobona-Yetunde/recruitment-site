@@ -45,7 +45,7 @@ const Header = () => {
               )}
             </button>
             {isMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 w-full bg-white/95 backdrop-blur-sm border border-orange-400 rounded-lg shadow-lg p-4 flex flex-col gap-3 text-black">
+              <div className="absolute top-full right-0 mt-2 w-full bg-white/95 backdrop-blur-sm border border-orange-400 rounded-lg shadow-lg p-4 flex flex-col gap-5 text-black">
                 <div>
                   <button
                     onClick={() => toggleDropdown("dataServices")}
@@ -59,46 +59,46 @@ const Header = () => {
                     )}
                   </button>
                   {activeDropdown === "dataServices" && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
+                    <div className="pl-4 mt-2 flex flex-col gap-5 text-sm">
                       <a
                         href="/DataEntryServices"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         Data Entry Services
                       </a>
                       <a
                         href="/data-verification-page"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         Data Entry Verification
                       </a>
                       <a
                         href="/ai-processing"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         AI Processing and Verification
                       </a>
                       <a
                         href="/data-research"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         Web Research Services
                       </a>
                       <a
                         href="/us-based-page"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         US Based Data Entry
                       </a>
                       <a
                         href="/customize-page"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         Customized Service Approach
                       </a>
                       <a
                         href="/data-entry-staffing"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         Data Entry Staffing & Management
                       </a>
@@ -130,14 +130,23 @@ const Header = () => {
                     )}
                   </button>
                   {activeDropdown === "about" && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
-                      <a href="/about-axion" className="hover:text-orange-500">
+                    <div className="pl-4 mt-2 flex flex-col gap-5 text-sm">
+                      <a
+                        href="/about-axion"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
+                      >
                         About Axion
                       </a>
-                      <a href="/fees" className="hover:text-orange-500">
+                      <a
+                        href="/fees"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
+                      >
                         Fees
                       </a>
-                      <a href="/faqs" className="hover:text-orange-500">
+                      <a
+                        href="/faqs"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
+                      >
                         FAQs
                       </a>
                     </div>
@@ -156,13 +165,16 @@ const Header = () => {
                     )}
                   </button>
                   {activeDropdown === "contact" && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
-                      <a href="/contact" className="hover:text-orange-500">
+                    <div className="pl-4 mt-2 flex flex-col gap-5 text-sm">
+                      <a
+                        href="/contact"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
+                      >
                         Contact
                       </a>
                       <a
                         href="/employment-page"
-                        className="hover:text-orange-500"
+                        className="hover:text-orange-500 border border-orange-400 p-4"
                       >
                         Employment
                       </a>
